@@ -1,9 +1,9 @@
 const student = {
     equipment: ["computer", "pen", "paper strings"],
-    energy: 6,
+    energy: 300,
     grades: 95,
     uniform: {
-        top: "blue",
+        top: "",
         bottom: "",
         shoes: "",
     }
@@ -29,7 +29,6 @@ function changeUniform(top, bottom, shoes) {
 }
 
 console.log(changeUniform("red", "blue","green"));
-console.log(student.uniform.top);
 
 //create a method study time that takes time studied (minutes) that will update our grades and deplete our energy.
 function study(minutes) {
@@ -58,26 +57,39 @@ console.log(study(20));
 console.log(study(20));
 console.log(study(20));
 
-// Old Solution
-function studyTime(minutes) {
-    if (minutes < 60) {
-        let studyMuchMore = student.grades - 20;
-        let energy1 = student.energy - 100;
-        console.log("your grade is " + studyMuchMore + "% and your energy is at " + energy1 + ". Study more next time.");
-    } else if (60 <= minutes && minutes <= 180) {
-        let studyMore = student.grades - 5;
-        let energy2 = student.energy - 200;
-        console.log("your grade is " + studyMore + "% and your energy is at " + energy2 + ". You did okay.");
-    } else if (minutes > 180) {
-        let studyEnough = student.grades + 5;
-        let energy3 = student.energy - 300;
-        console.log("your grade is " + studyEnough + "% and your energy is at " + energy3 + ". Great Job! Get some rest.");
-    } else {
-        console.log("your input is invalid");
-    };
-};
 
-ran some tests
-console.log(studyTime(30));
-console.log(studyTime(90));
-console.log(studyTime(300));
+// // Old Solution
+// function studyTime(minutes) {
+//     if (minutes < 60) {
+//         let studyMuchMore = student.grades - 20;
+//         let energy1 = student.energy - 100;
+//         console.log("your grade is " + studyMuchMore + "% and your energy is at " + energy1 + ". Study more next time.");
+//     } else if (60 <= minutes && minutes <= 180) {
+//         let studyMore = student.grades - 5;
+//         let energy2 = student.energy - 200;
+//         console.log("your grade is " + studyMore + "% and your energy is at " + energy2 + ". You did okay.");
+//     } else if (minutes > 180) {
+//         let studyEnough = student.grades + 5;
+//         let energy3 = student.energy - 300;
+//         console.log("your grade is " + studyEnough + "% and your energy is at " + energy3 + ". Great Job! Get some rest.");
+//     } else {
+//         console.log("your input is invalid");
+//     };
+// };
+
+// // ran some tests
+// console.log(studyTime(30));
+// console.log(studyTime(90));
+// console.log(studyTime(300));
+
+//Update uniform method to change something that doesn't exist in the uniform object, like adding an accessory, that is equal to glasses.
+
+function changeUniformAgain(accessory, myValue) {
+    let key = (accessory)
+    student.uniform[key] = myValue;
+    return student.uniform ;
+}
+
+console.log(changeUniformAgain("hat","purple"));
+console.log(changeUniformAgain("glasses", "blue"));
+console.log(changeUniformAgain("watch", "voilet"))
